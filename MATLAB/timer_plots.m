@@ -17,7 +17,7 @@ hold on;
 surf(x,y,ones(13,8)');
 xlabel('Array Size (2^q)', 'FontSize', 18);
 ylabel('Number of Threads (2^p)', 'FontSize', 18);
-zlabel('Time Reduction (Hz)', 'FontSize', 18);
+zlabel('Excecuton Time Ratio (seq/par)', 'FontSize', 18);
 colorbar;
 
 figure('Name','Mesh on pthreads qsort_seq','NumberTitle','off');
@@ -26,7 +26,7 @@ hold on;
 surf(x,y,ones(13,8)');
 xlabel('Array Size (2^q)', 'FontSize', 18);
 ylabel('Number of Threads (2^p)', 'FontSize', 18);
-zlabel('Time Reduction', 'FontSize', 18);
+zlabel('Excecuton Time Ratio (seq/par)', 'FontSize', 18);
 colorbar;
 
 for i = 1:13
@@ -44,7 +44,7 @@ hold on;
 surf(x,y,ones(13,8)');
 xlabel('Array Size (2^q)', 'FontSize', 18);
 ylabel('Number of Threads (2^p)', 'FontSize', 18);
-zlabel('Time Reduction (Hz)', 'FontSize', 18);
+zlabel('Excecuton Time Ratio (seq/par)', 'FontSize', 18);
 colorbar;
 
 figure('Name','Mesh on omp qsort_seq','NumberTitle','off');
@@ -53,7 +53,7 @@ hold on;
 surf(x,y,ones(13,8)');
 xlabel('Array Size (2^q)', 'FontSize', 18);
 ylabel('Number of Threads (2^p)', 'FontSize', 18);
-zlabel('Time Reduction', 'FontSize', 18);
+zlabel('Excecuton Time Ratio (seq/par)', 'FontSize', 18);
 colorbar;
 
 for i = 1:13
@@ -71,7 +71,7 @@ hold on;
 surf(x,y,ones(13,8)');
 xlabel('Array Size (2^q)', 'FontSize', 18);
 ylabel('Number of Threads (2^p)', 'FontSize', 18);
-zlabel('Time Reduction (Hz)', 'FontSize', 18);
+zlabel('Excecuton Time Ratio (seq/par)', 'FontSize', 18);
 colorbar;
 
 figure('Name','Mesh on cilk qsort_seq','NumberTitle','off');
@@ -80,5 +80,5 @@ hold on;
 surf(x,y,ones(13,8)');
 xlabel('Array Size (2^q)', 'FontSize', 18);
 ylabel('Number of Threads (2^p)', 'FontSize', 18);
-zlabel('Time Reduction', 'FontSize', 18);
+zlabel('Excecuton Time Ratio (seq/par)', 'FontSize', 18);
 colorbar;
