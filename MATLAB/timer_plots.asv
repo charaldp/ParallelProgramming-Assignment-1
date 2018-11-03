@@ -1,0 +1,21 @@
+pthreads = csvread('pthreads_data.csv');
+omp = csvread('omp_data.csv');
+cilk = csvread('cilk_data.csv');
+for i = 1:13
+    for j = 1:8
+        for k = 1:2
+            matrix(i,j,k) = mean(pthreads(8*(i-1)+1:8*(i-1)+8,k + 2)) / pthreads(8*(i-1)+j,5); 
+        end
+    end
+end
+
+figure('Name','Mesh on pthreads qsort-stdlib','NumberTitle','off');
+[x,y]=meshgrid(log(pthreads(1:8:97,1)),log(pthreads(1:8,2));
+mesh(x,y,matrix(:,:,2)');
+hold on;
+mesh(ones(13,8))
+figure('Name','Mesh on pthreads qsort_seq','NumberTitle','off');
+mesh(pthreads(1:8:97,1),pthreads(1:8,2)',matrix(:,:,2));
+hold on;
+mesh(ones(13,8));
+
